@@ -1,0 +1,12 @@
+if ARCH_SCORPI
+
+config SYS_VENDOR
+	default "emulation"
+
+config SYS_BOARD
+	default "scorpi-arm"
+
+config SYS_CONFIG_NAME
+	default "scorpi-arm64"
+
+endif

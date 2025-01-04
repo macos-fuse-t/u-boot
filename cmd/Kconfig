@@ -1595,6 +1595,16 @@ config CMD_SCSI
 	  scan the bus, reset the bus, read and write data and get information
 	  about devices.
 
+config CMD_AHCI
+        bool "ahco - Access to AHCI devices"
+        depends on AHCI
+        default y
+        help
+          This provides a 'scsi' command which provides access to SCSI (Small
+          Computer System Interface) devices. The command provides a way to
+          scan the bus, reset the bus, read and write data and get information
+          about devices.
+
 config CMD_SDRAM
 	bool "sdram - Print SDRAM configuration information"
 	help

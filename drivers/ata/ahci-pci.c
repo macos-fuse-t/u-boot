@@ -39,6 +39,7 @@ static struct pci_device_id ahci_pci_supported[] = {
 	{ PCI_DEVICE(PCI_VENDOR_ID_ASMEDIA, 0x0611) },
 	{ PCI_DEVICE(PCI_VENDOR_ID_MARVELL, 0x6121) },
 	{ PCI_DEVICE(PCI_VENDOR_ID_MARVELL, 0x6145) },
+        { PCI_DEVICE(0x8086, 0x2821) },
 	{},
 };
 

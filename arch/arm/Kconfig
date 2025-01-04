@@ -597,6 +597,11 @@ config ARCH_AT91
 	select SPL_SEPARATE_BSS if SPL
 	imply SYS_THUMB_BUILD
 
+config ARCH_SCORPI
+	bool "scorpi"
+	select ARM64
+	select DM
+
 config ARCH_DAVINCI
 	bool "TI DaVinci"
 	select CPU_ARM926EJS
@@ -2254,6 +2259,8 @@ source "arch/arm/mach-bcmbca/Kconfig"
 
 source "arch/arm/mach-bcmstb/Kconfig"
 
+source "arch/arm/mach-scorpi/Kconfig"
+
 source "arch/arm/mach-davinci/Kconfig"
 
 source "arch/arm/mach-exynos/Kconfig"
@@ -2383,6 +2390,7 @@ source "board/broadcom/bcmns/Kconfig"
 source "board/broadcom/bcmns3/Kconfig"
 source "board/cavium/thunderx/Kconfig"
 source "board/eets/pdu001/Kconfig"
+source "board/emulation/scorpi-arm/Kconfig"
 source "board/emulation/qemu-arm/Kconfig"
 source "board/emulation/qemu-sbsa/Kconfig"
 source "board/freescale/ls2080aqds/Kconfig"

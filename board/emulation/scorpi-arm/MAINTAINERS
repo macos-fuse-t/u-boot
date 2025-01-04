@@ -1,0 +1,6 @@
+SCORPI ARM 'VIRT' BOARD
+M:	Alex Fishman <alex@fuse-t.org>
+S:	Maintained
+F:	board/emulation/scorpi-arm/
+F:	include/configs/scorpi-arm.h
+F:	configs/scorpi_arm64_defconfig
