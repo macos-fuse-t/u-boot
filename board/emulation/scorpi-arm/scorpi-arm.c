@@ -5,6 +5,7 @@
 
 #include <config.h>
 #include <dm.h>
+#include <init.h>
 #include <fdtdec.h>
 #include <virtio.h>
 
@@ -14,6 +15,13 @@ DECLARE_GLOBAL_DATA_PTR;
 
 static struct mm_region scorpi_arm64_mem_map[] = {
 	{
+		/* Flash */
+		.virt = 0xFC000000UL,
+		.phys = 0xFC000000UL,
+		.size = 0x04000000UL,
+		.attrs = PTE_BLOCK_MEMTYPE(MT_NORMAL) |
+			 PTE_BLOCK_INNER_SHARE
+	}, {
 		/* Peripherals */
 		.virt = 0x10000UL,
 		.phys = 0x10000UL,
@@ -67,6 +75,10 @@ int board_init(void)
 
 int board_late_init(void)
 {
+	/* init display */
+	pci_init();
+	uclass_probe_all(UCLASS_VIDEO);
+
 	/*
 	 * Make sure virtio bus is enumerated so that peripherals
 	 * on the virtio bus can be discovered by their drivers
@@ -94,6 +106,7 @@ int dram_init_banksize(void)
 void *board_fdt_blob_setup(int *err)
 {
 	*err = 0;
+
 	/* XXX: Pass in the address from the host */
-	return (void *)0x100100000;
+	return (void *)0x100000000;
 }
