@@ -14,7 +14,15 @@
 DECLARE_GLOBAL_DATA_PTR;
 
 static struct mm_region scorpi_arm64_mem_map[] = {
-	{
+	 {
+		/* PCI IO */
+		.virt = 0x2000,
+		.phys = 0x2000,
+		.size = 0xe000,
+		.attrs = PTE_BLOCK_MEMTYPE(MT_DEVICE_NGNRNE) |
+			 PTE_BLOCK_NON_SHARE |
+			 PTE_BLOCK_PXN | PTE_BLOCK_UXN
+	}, {
 		/* Flash */
 		.virt = 0xFC000000UL,
 		.phys = 0xFC000000UL,
