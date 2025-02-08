@@ -33,7 +33,7 @@ static struct mm_region scorpi_arm64_mem_map[] = {
 		/* Peripherals */
 		.virt = 0x10000UL,
 		.phys = 0x10000UL,
-		.size = 0x1000UL,
+		.size = 0x4000UL,
 		.attrs = PTE_BLOCK_MEMTYPE(MT_DEVICE_NGNRNE) |
 			 PTE_BLOCK_NON_SHARE |
 			 PTE_BLOCK_PXN | PTE_BLOCK_UXN
@@ -116,5 +116,5 @@ void *board_fdt_blob_setup(int *err)
 	*err = 0;
 
 	/* XXX: Pass in the address from the host */
-	return (void *)0x100000000;
+	return (void *)0xFFFF0000;
 }

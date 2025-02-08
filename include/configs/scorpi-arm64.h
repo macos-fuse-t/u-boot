@@ -23,7 +23,7 @@
 
 #define CFG_EXTRA_ENV_SETTINGS	\
 	"fdtfile=scorpi-arm.dst\0"	\
-	"fdt_addr_r=0x100100000\0"	\
+	"fdt_addr_r=0x100000000\0"	\
 	"kernel_addr_r=0x100200000\0"	\
 	BOOTENV
 
